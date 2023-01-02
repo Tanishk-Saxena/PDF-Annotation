@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 
 const Document = ({doc}) => {
 
     const url = `https://arxiv.org/pdf/2212.${doc}.pdf`;
+    const embedded_url = `https://docs.google.com/viewer?url=${url}&embedded=true`;
 
     useEffect(() => {
       const fetchPDF = async (url) => {
@@ -39,7 +40,7 @@ const Document = ({doc}) => {
         <p>Hello There!</p>
       </div>
       <div className="right pdf">
-        <h3>PDF Here</h3>
+        <iframe src={embedded_url} frameborder="0" style={{height: "94vh", width: "100%"}}></iframe>
       </div>
     </div>
   )
