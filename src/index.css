@@ -11,3 +11,88 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 20px;
+  gap: 50px;
+}
+
+.container .pdf {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 2;
+}
+
+.container .left {
+  height: 44vh;
+}
+
+.container .content {
+  overflow-y: scroll;
+}
+
+ul.dash {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 1em;
+}
+
+ul.dash > li:before {
+  display: inline-block;
+  content: '-';
+  width: 1em;
+  margin-left: -1em;
+}
+
+button {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  color: black;
+}
+
+button.title.heading-btn {
+  margin-right: 20px;
+}
+
+button.title {
+  background-color: rgba(255, 68, 0, 0.728);
+}
+
+button.title:hover {
+  background-color: rgba(231, 103, 57, 0.728)
+}
+
+button.title:active {
+  background-color: rgb(255, 68, 0)
+}
+
+button.title:disabled, :disabled:hover, :disabled:active {
+  background-color: rgba(255, 68, 0, 0.728)
+}
+
+button.author.heading-btn {
+  margin-left: 20px;
+}
+
+button.author {
+  background-color: rgba(0, 128, 0, 0.71);
+}
+
+button.author:hover {
+  background-color: rgba(49, 166, 49, 0.71);
+}
+
+button.author:active {
+  background-color: rgb(0, 128, 0);
+}
+
+button.author:disabled, :disabled:hover, :disabled:active {
+  background-color: rgba(0, 128, 0, 0.71);
+}
