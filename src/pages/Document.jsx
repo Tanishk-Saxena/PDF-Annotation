@@ -16,7 +16,6 @@ const Document = ({doc}) => {
     useEffect(() => {
       const fetchPDF = async (url) => {
         const res = await fetch(url);
-        console.log(res);
       }
       fetchPDF(url);
     }, []);
