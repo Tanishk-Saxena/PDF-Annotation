@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Annotations from '../components/Annotations';
+import Row from '../components/Row';
 
 const Document = ({doc}) => {
 
     const url = `https://arxiv.org/pdf/2212.${doc}.pdf`;
     const embedded_url = `https://docs.google.com/viewer?url=${url}&embedded=true`;
-    const titleModeObject = {color: 'rgba(231, 103, 57, 0.428)', strokeColor: 'rgba(255, 68, 0, 0.728)', class: 'title'};
-    const authorModeObject = {color: 'rgba(49, 166, 49, 0.41)', strokeColor: 'rgba(0, 128, 0, 0.71)', class: 'author'};
+    const titleModeObject = {color: 'rgba(231, 103, 57, 0.428)', strokeColor: 'rgba(255, 68, 0, 0.728)', btnClass: 'title'};
+    const authorModeObject = {color: 'rgba(49, 166, 49, 0.41)', strokeColor: 'rgba(0, 128, 0, 0.71)', btnClass: 'author'};
     const [mode, setMode] = useState(null);
     const [modeObject, setModeObject] = useState({});
     const localAnnotationsArray = JSON.parse(localStorage.getItem(doc));
@@ -45,19 +46,9 @@ const Document = ({doc}) => {
       <div className="left content">
         <h3>Annotations</h3>
         <hr />
-        <p>Hello There!</p>
-        <p>Hello There!</p>
-        <p>Hello There!</p>
-        <p>Hello There!</p>
-        <p>Hello There!</p>
-        <p>Hello There!</p>
-        <p>Hello There!</p>
-        <p>Hello There!</p>
-        <p>Hello There!</p>
-        <p>Hello There!</p>
-        <p>Hello There!</p>
-        <p>Hello There!</p>
-        <p>Hello There!</p>
+        {annotations && annotations.map((annotation)=>{
+          return (<Row key={annotation.key} details={annotation} />);
+        })}
       </div>
       <div className="right pdf">
         <div className="annotations" style={{height: "94vh", width: "100%"}}>

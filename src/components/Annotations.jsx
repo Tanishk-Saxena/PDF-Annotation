@@ -52,7 +52,6 @@ const Annotations = ({mode, modeObject, annotations, setAnnotations}) => {
   };
 
   const annotationsToDraw = [...annotations, ...newAnnotation];
-  console.log(annotationsToDraw);
   
   let initialWidth = 700;
   let initialHeight = 700;
@@ -90,6 +89,7 @@ const Annotations = ({mode, modeObject, annotations, setAnnotations}) => {
         {annotationsToDraw && annotationsToDraw.map(value => {
           return (
             <Rect
+              key={value.key}
               x={value.x}
               y={value.y}
               width={value.width}
