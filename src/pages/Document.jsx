@@ -35,6 +35,10 @@ const Document = ({doc}) => {
       localStorage.setItem(doc, JSON.stringify(annotations));
     }, [annotations]);
     
+    const handleReset = () => {
+      setAnnotations([]);
+    }
+
   return (
     <div className="container">
       <div className="left heading">
@@ -44,10 +48,11 @@ const Document = ({doc}) => {
         <button id="author-btn" className='author heading-btn' onClick={()=>{let titleBtn = document.getElementById('title-btn'); let authorBtn = document.getElementById('author-btn'); if(mode === 'authorMode'){setMode(null); authorBtn.classList.remove('author-active');}else{setMode('authorMode'); authorBtn.classList.add('author-active'); titleBtn.classList.remove('title-active');}}}>Author</button>
       </div>
       <div className="left content">
-        <h3>Annotations</h3>
+        <h3 className='annotations-title'>Annotations</h3>
+        <button disabled={annotations.length > 0 ? false : true} className="reset" onClick={handleReset}>Clear all</button>
         <hr />
         {annotations && annotations.map((annotation)=>{
-          return (<Row key={annotation.key} details={annotation} />);
+          return (<Row key={annotation.key} details={annotation} annotations={annotations} setAnnotations={setAnnotations} />);
         })}
       </div>
       <div className="right pdf">
