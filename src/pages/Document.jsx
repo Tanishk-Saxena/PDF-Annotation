@@ -55,7 +55,7 @@ const Document = ({doc}) => {
         })}
       </div>
       <div className="right pdf">
-        <div className="annotations" style={{height: "94vh", width: "100%"}}>
+        <div className="annotations">
           <Annotations mode={mode} modeObject={modeObject} annotations={annotations} setAnnotations={setAnnotations}/>
         </div>
         <iframe src={embedded_url} frameBorder="0" style={{height: "100%", width: "100%"}}></iframe>

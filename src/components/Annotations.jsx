@@ -53,7 +53,7 @@ const Annotations = ({mode, modeObject, annotations, setAnnotations}) => {
 
   const annotationsToDraw = [...annotations, ...newAnnotation];
   
-  let initialWidth = 700;
+  let initialWidth = 650;
   let initialHeight = 700;
   const [width, setWidth] = useState(initialWidth);
   const [height, setHeight] = useState(initialHeight);
