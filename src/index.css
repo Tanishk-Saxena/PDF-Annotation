@@ -65,6 +65,7 @@ button {
 
 button:disabled {
   color: black;
+  cursor: default;
 }
 
 button.title.heading-btn {
@@ -123,4 +124,20 @@ button.author-active {
 
 button.author-active:hover {
   background-color: rgba(49, 166, 49, 0.71);
+}
+
+.row-container {
+  margin-bottom: 10px;
+}
+
+.row-container:last-child {
+  margin-bottom: 0;
+}
+
+.row-span {
+  margin-right: 10px;
+}
+
+.row-btn {
+  margin-left: 10px;
 }
