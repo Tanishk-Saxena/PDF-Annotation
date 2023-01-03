@@ -20,8 +20,8 @@ const Annotations = ({mode, modeObject, annotations, setAnnotations}) => {
       const annotationToAdd = {
         x: sx,
         y: sy,
-        width: abs(x - sx),
-        height: abs(y - sy),
+        width: Math.abs(x - sx),
+        height: Math.abs(y - sy),
         key: annotations.length + 1,
         ...modeObject
       };
@@ -42,8 +42,8 @@ const Annotations = ({mode, modeObject, annotations, setAnnotations}) => {
         {
           x: sx,
           y: sy,
-          width: abs(x - sx),
-          height: abs(y - sy),
+          width: Math.abs(x - sx),
+          height: Math.abs(y - sy),
           key: "0",
           ...modeObject
         }
