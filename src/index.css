@@ -22,6 +22,16 @@ code {
 .container .pdf {
   grid-column: 2 / span 1;
   grid-row: 1 / span 2;
+  position: relative;
+}
+
+.container .pdf .annotations {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 10;
 }
 
 .container .left {
@@ -66,15 +76,24 @@ button.title {
 }
 
 button.title:hover {
-  background-color: rgba(231, 103, 57, 0.728)
+  background-color: rgba(231, 103, 57, 0.728);
 }
 
 button.title:active {
-  background-color: rgb(255, 68, 0)
+  background-color: rgb(255, 68, 0);
 }
 
 button.title:disabled, :disabled:hover, :disabled:active {
-  background-color: rgba(255, 68, 0, 0.728)
+  background-color: rgba(255, 68, 0, 0.728);
+}
+
+button.title-active {
+  background-color: rgb(255, 68, 0);
+  border: solid 2px rgb(148, 39, 0);
+}
+
+button.title-active:hover {
+  background-color: rgba(231, 103, 57, 0.728);
 }
 
 button.author.heading-btn {
@@ -95,4 +114,13 @@ button.author:active {
 
 button.author:disabled, :disabled:hover, :disabled:active {
   background-color: rgba(0, 128, 0, 0.71);
+}
+
+button.author-active {
+  background-color: rgb(0, 128, 0);
+  border: solid 2px rgb(0, 70, 0);
+}
+
+button.author-active:hover {
+  background-color: rgba(49, 166, 49, 0.71);
 }
