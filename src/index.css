@@ -64,7 +64,6 @@ button {
 }
 
 button:disabled {
-  color: black;
   cursor: default;
 }
 
@@ -86,7 +85,6 @@ button.title:active {
 
 button.title:disabled, :disabled:hover, :disabled:active {
   background-color: rgba(255, 68, 0, 0.728);
-  color: rgba(0, 0, 0, 0.5);
 }
 
 button.title-active {
@@ -116,7 +114,6 @@ button.author:active {
 
 button.author:disabled, :disabled:hover, :disabled:active {
   background-color: rgba(0, 128, 0, 0.71);
-  color: rgba(0, 0, 0, 0.5);
 }
 
 button.author-active {
@@ -147,7 +144,6 @@ button.reset:active {
 
 button.reset:disabled, :disabled:hover, :disabled:active {
   background-color: rgb(193, 193, 193);
-  color: rgba(0, 0, 0, 0.5);
 }
 
 .row-container {
@@ -164,6 +160,10 @@ button.reset:disabled, :disabled:hover, :disabled:active {
 .row-btn {
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.row-btn:disabled {
+  color: black;
 }
 
 .row-img {
